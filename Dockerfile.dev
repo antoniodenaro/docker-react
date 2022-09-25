@@ -1,10 +1,37 @@
 FROM node:16-alpine
 
-WORKDIR '/app'
+# This two instruction and other down from here, in unix/linux 
+#  is not neccesary because root have permission
 
-COPY package.json .
+USER node
+
+RUN mkdir -p /home/node/app
+
+# WORKDIR '/app'
+
+WORKDIR /home/node/app
+
+#COPY package.json .
+
+# The inline chown commands will set ownership of the files you are 
+# copying from your local environment to the node user in the container.
+
+COPY --chown=node:node ./package.json ./
+
 RUN npm install
 
-COPY . .
+#COPY . .
+
+# The inline chown commands will set ownership of the files you are 
+# copying from your local environment to the node user in the container.
+
+COPY --chown=node:node ./ ./
 
 CMD ["npm", "run", "start"]
+
+# STEP 1: Using the WSL terminal build your Docker image as you typically would:
+# antoniodenaro@IAMHAPPY:~/frontend$ docker build -f Dockerfile.dev -t tonymoney:frontend .
+
+# STEP 2: Using the WSL terminal, start and run a container. Using the full path:
+# antoniodenaro@IAMHAPPY:~/frontend$  docker run -it -p 3000:3000 -v /home/node/app/node_modules -v /home/antoniodenaro/frontend:/home/node/app tonymoney:frontend
+
