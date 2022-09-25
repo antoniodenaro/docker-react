@@ -1,0 +1,19 @@
+# 11 = E:\frontend\npm run test
+
+# 12 = E:\frontend\npm run build
+
+# 13 = E:\frontend\docker build -f Dockerfile.dev .
+
+# 13 = E:\frontend\docker run -p 3000:3000 ee0868e1e287
+
+On Git Bash
+# 14 = antoniodenaro@IAMHAPPY MINGW64 /e/02_Learn/08_Docker y Kubernetes/frontend
+$ docker run -p 3000:3000 -v ${pwd}:/app 1193952b54fa
+
+# 13 = E:\frontend\docker build -t frontend:0.0.1 -f Dockerfile.dev .
+
+On Git Bash
+# 14 = antoniodenaro@IAMHAPPY MINGW64 /e/02_Learn/08_Docker y Kubernetes/frontend
+$ docker run -p 3000:3000 -v ${pwd}:/app c2de2639bf3b
+
+# 15 = E:\frontend\docker-compose up
