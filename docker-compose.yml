@@ -9,4 +9,20 @@ services:
     volumes:
       - /home/node/app/node_modules
       - .:/home/node/app
+  #\\
+  # Two options for the test:
+  # Make test with the controls outside of docker-compose
+  # antoniodenaro@IAMHAPPY:~/frontend$ docker exec -it <container image id> npm run test
+  # Make test without controls inside docker-compose
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /home/node/app/node_modules
+      - .:/home/node/app
+    command: ["npm", "run", "test"]
+#//
+#
 # antoniodenaro@IAMHAPPY:~/frontend$ docker-compose up
+# antoniodenaro@IAMHAPPY:~/frontend$ docker-compose up --build

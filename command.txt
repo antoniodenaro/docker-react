@@ -1,19 +1,20 @@
-# 11 = E:\frontend\npm run test
 
-# 12 = E:\frontend\npm run build
+docker system prune
+# 0 = antoniodenaro@IAMHAPPY:~/frontend$ docker build -f Dockerfile.dev -t tonymoney:frontend .
 
-# 13 = E:\frontend\docker build -f Dockerfile.dev .
+# 0 = antoniodenaro@IAMHAPPY:~/frontend$ docker run -it -p 3000:3000 -v /home/node/app/node_modules -v /home/antoniodenaro/frontend:/home/node/app tonymoney:frontend
 
-# 13 = E:\frontend\docker run -p 3000:3000 ee0868e1e287
+# 1 = antoniodenaro@IAMHAPPY:~/frontend$ docker-compose up
 
-On Git Bash
-# 14 = antoniodenaro@IAMHAPPY MINGW64 /e/02_Learn/08_Docker y Kubernetes/frontend
-$ docker run -p 3000:3000 -v ${pwd}:/app 1193952b54fa
+# 2 = antoniodenaro@IAMHAPPY:~/frontend$ docker build -f Dockerfile.dev .
+# 3 = antoniodenaro@IAMHAPPY:~/frontend$ docker run -it <container image id> npm run test
 
-# 13 = E:\frontend\docker build -t frontend:0.0.1 -f Dockerfile.dev .
+# 4 = antoniodenaro@IAMHAPPY:~/frontend$ docker-compose up
+# 5 = antoniodenaro@IAMHAPPY:~/frontend$ docker exec -it <container image id> npm run test
 
-On Git Bash
-# 14 = antoniodenaro@IAMHAPPY MINGW64 /e/02_Learn/08_Docker y Kubernetes/frontend
-$ docker run -p 3000:3000 -v ${pwd}:/app c2de2639bf3b
+# 6 = antoniodenaro@IAMHAPPY:~/frontend$ docker attach <container image id>
+# 7 = antoniodenaro@IAMHAPPY:~/frontend$ docker exec -it <container image id> sh
+# 8 = ~/app $ ps
 
-# 15 = E:\frontend\docker-compose up
+
+
