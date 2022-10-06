@@ -16,5 +16,25 @@ docker system prune
 # 7 = antoniodenaro@IAMHAPPY:~/frontend$ docker exec -it <container image id> sh
 # 8 = ~/app $ ps
 
+Git Commands:
+
+antoniodenaro@IAMHAPPY:~/frontend$ git init
+
+>> Reinitialized existing Git repository in /home/antoniodenaro/frontend/.git/
+
+antoniodenaro@IAMHAPPY:~/frontend$ git add .
+
+antoniodenaro@IAMHAPPY:~/frontend$ git commit -m "initial commit"
+
+antoniodenaro@IAMHAPPY:~/frontend$ git remote add origin https://github.com/antoniodenaro/docker-react.git
+
+antoniodenaro@IAMHAPPY:~/frontend$ git push origin master
 
 
+script:
+  - docker run USERNAME/docker-react npm run test -- --coverage
+ 
+instead should be:
+
+script:
+  - docker run -e CI=true USERNAME/docker-react npm run test
