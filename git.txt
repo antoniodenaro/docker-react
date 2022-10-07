@@ -1,0 +1,21 @@
+Git with travis
+
+antoniodenaro@IAMHAPPY:~/frontend$ git add .
+antoniodenaro@IAMHAPPY:~/frontend$ git commit -m "added travis file"
+
+[master df8b462] added travis file
+ 3 files changed, 33 insertions(+)
+ create mode 100644 .travis.yml
+
+antoniodenaro@IAMHAPPY:~/frontend$ git push origin master
+
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 808 bytes | 808.00 KiB/s, done.
+Total 5 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/antoniodenaro/docker-react.git
+   7e6d3ce..df8b462  master -> master
+
